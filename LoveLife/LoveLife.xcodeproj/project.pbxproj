@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66A7757219D11FEE0039800B /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A7757119D11FEE0039800B /* CityViewController.m */; };
+		66A7757419D124860039800B /* ump_icon_back_foucs.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757319D124860039800B /* ump_icon_back_foucs.png */; };
+		66A7757619D1258F0039800B /* deatil_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */; };
 		66DAA5DA19D0FBF000D02D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5D919D0FBF000D02D89 /* Foundation.framework */; };
 		66DAA5DC19D0FBF000D02D89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */; };
 		66DAA5DE19D0FBF000D02D89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5DD19D0FBF000D02D89 /* UIKit.framework */; };
@@ -47,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66A7757019D11FEE0039800B /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		66A7757119D11FEE0039800B /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		66A7757319D124860039800B /* ump_icon_back_foucs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ump_icon_back_foucs.png; sourceTree = "<group>"; };
+		66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deatil_left_arrow@2x.png"; sourceTree = "<group>"; };
 		66DAA5D619D0FBF000D02D89 /* LoveLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66DAA5D919D0FBF000D02D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,6 +228,8 @@
 		66DAA61519D1070900D02D89 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */,
+				66A7757319D124860039800B /* ump_icon_back_foucs.png */,
 				66DAA62919D10AAD00D02D89 /* icon_more_selected@2x.png */,
 				66DAA62A19D10AAD00D02D89 /* icon_more@2x.png */,
 				66DAA62519D10AA300D02D89 /* icon_my_selected@2x.png */,
@@ -270,6 +279,8 @@
 			children = (
 				66DAA62E19D10DAC00D02D89 /* TuanViewController.h */,
 				66DAA62F19D10DAC00D02D89 /* TuanViewController.m */,
+				66A7757019D11FEE0039800B /* CityViewController.h */,
+				66A7757119D11FEE0039800B /* CityViewController.m */,
 			);
 			name = tuan;
 			sourceTree = "<group>";
@@ -376,8 +387,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A7757619D1258F0039800B /* deatil_left_arrow@2x.png in Resources */,
 				66DAA61F19D1094C00D02D89 /* icon_tuangou_selected@2x.png in Resources */,
 				66DAA62819D10AA300D02D89 /* icon_my@2x.png in Resources */,
+				66A7757419D124860039800B /* ump_icon_back_foucs.png in Resources */,
 				66DAA62319D109C600D02D89 /* icon_near_selected@2x.png in Resources */,
 				66DAA62719D10AA300D02D89 /* icon_my_selected@2x.png in Resources */,
 				66DAA5E419D0FBF000D02D89 /* InfoPlist.strings in Resources */,
@@ -411,6 +424,7 @@
 				66DAA63D19D10E2500D02D89 /* MoreViewController.m in Sources */,
 				66DAA63019D10DAC00D02D89 /* TuanViewController.m in Sources */,
 				66DAA5EA19D0FBF000D02D89 /* AppDelegate.m in Sources */,
+				66A7757219D11FEE0039800B /* CityViewController.m in Sources */,
 				66DAA5E619D0FBF000D02D89 /* main.m in Sources */,
 				66DAA60B19D1004500D02D89 /* BaseNavigationController.m in Sources */,
 			);
@@ -609,6 +623,7 @@
 				66DAA60419D0FBF000D02D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66DAA60519D0FBF000D02D89 /* Build configuration list for PBXNativeTarget "LoveLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -617,6 +632,7 @@
 				66DAA60719D0FBF000D02D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseNavigationController.h"
-#import "BaseTabBarController.h"
 #import "TuanViewController.h"
 #import "NearViewController.h"
 #import "MyViewController.h"
