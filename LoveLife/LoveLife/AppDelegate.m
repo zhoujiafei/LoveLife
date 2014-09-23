@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseNavigationController.h"
+#import "BaseTabBarController.h"
+#import "TuanViewController.h"
+#import "NearViewController.h"
+#import "MyViewController.h"
+#import "MoreViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +22,37 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //团购
+    TuanViewController *tuanVC = [[TuanViewController alloc] init];
+    BaseNavigationController *tuanNav = [[BaseNavigationController alloc] initWithRootViewController:tuanVC];
+    tuanNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"团购" image:[UIImage imageNamed:@"icon_tuangou"] selectedImage:[[UIImage imageNamed:@"icon_tuangou_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    //周边
+    NearViewController *zhoubianVC = [[NearViewController alloc] init];
+    BaseNavigationController *zhoubianNav = [[BaseNavigationController alloc] initWithRootViewController:zhoubianVC];
+    zhoubianNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"周边" image:[UIImage imageNamed:@"icon_near"] selectedImage:[[UIImage imageNamed:@"icon_near_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    //我的
+    MyViewController *myVC = [[MyViewController alloc] init];
+    BaseNavigationController *myNav = [[BaseNavigationController alloc] initWithRootViewController:myVC];
+    myNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"icon_my"] selectedImage:[[UIImage imageNamed:@"icon_my_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    //更多
+    MoreViewController *moreVC = [[MoreViewController alloc] init];
+    BaseNavigationController *moreNav = [[BaseNavigationController alloc] initWithRootViewController:moreVC];
+    moreNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"更多" image:[UIImage imageNamed:@"icon_more"] selectedImage:[[UIImage imageNamed:@"icon_more_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    //设置TabBarItem上面字体的颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
+                                                        NSForegroundColorAttributeName : [UIColor orangeColor]
+                                                        } forState:UIControlStateSelected];
+    
+    
+    BaseTabBarController *tab = [[BaseTabBarController alloc] init];
+    tab.viewControllers = @[tuanNav,zhoubianNav,myNav,moreNav];
+    
+    self.window.rootViewController = tab;
     return YES;
 }
 
