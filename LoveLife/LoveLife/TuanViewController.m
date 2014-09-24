@@ -74,7 +74,7 @@
 -(void)changePage:(UIPageControl *)sender
 {
     int page = sender.currentPage;
-    [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width * page, 0)];
+    [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width * page, 0) animated:YES];
 }
 
 
@@ -85,7 +85,7 @@
 {
     CGFloat pageWidth = _scrollView.bounds.size.width;
     // 在滚动超过页面宽度的50%的时候，切换到新的页面
-    int page = floor((_scrollView.contentOffset.x + pageWidth/2)/pageWidth) ;
+    int page = floor(_scrollView.contentOffset.x / pageWidth);
     _pageControl.currentPage = page;
 }
 
