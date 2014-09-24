@@ -10,4 +10,6 @@
 
 @protocol config <NSObject>
 
+#define SYSTEM_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
+
 @end

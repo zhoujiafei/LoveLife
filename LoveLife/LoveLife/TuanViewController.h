@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface TuanViewController : BaseViewController
+@interface TuanViewController : BaseViewController <UIScrollViewDelegate>
+
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) UIPageControl *pageControl;
 
 @end

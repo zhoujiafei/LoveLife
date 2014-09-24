@@ -19,6 +19,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.view.backgroundColor = [UIColor grayColor];
+        if(SYSTEM_VERSION >= 7.0)
+        {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return self;
 }
@@ -27,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
