@@ -9,6 +9,15 @@
 #ifndef LoveLife_RequestApi_h
 #define LoveLife_RequestApi_h
 
-#define GET_TUANGOU_API @"http://10.0.1.40/dinner/index.php?r=api"
+#define kCurrentCity                @"南京"   //定位当前的城市
+#define kSearchQ                    @"餐馆"   //搜索餐馆
+
+#define kAppKey                     @"6de8d9472038a800e0112001a28516ed" //爱帮接口应用key
+#define kApiHost                    @"http://openapi.aibang.com/" //接口host
+
+#define kSearchShops                @"search" //搜索商户
+#define kShopDetail                 @"biz"    //获取商户详情
+#define kShopsComments              @"biz/%@/comments"    //获取商户评论
+#define kShopsPics                  @"biz/%@/pics"        //获取商户图片
 
 #endif

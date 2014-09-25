@@ -108,7 +108,8 @@
 //请求团购列表数据
 -(void)requestTuanGouData
 {
-    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:GET_TUANGOU_API]];
+    NSString *getShopsUrl = [NSString stringWithFormat:@"%@/%@?app_key=%@&city=%@&q=%@&alt=json",kApiHost,kSearchShops,kAppKey,kCurrentCity,kSearchQ];
+    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:getShopsUrl]];
     __weak ASIHTTPRequest *request = request_;
     [request setCompletionBlock:^{
         if ([request responseStatusCode] != 200)
@@ -122,9 +123,8 @@
         }
         
         NSData *data = [request responseData];
-        NSDictionary *allData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        NSLog(@"%@",allData);
+        NSLog(@"%@",data);
         
         
         [_tableView reloadData];
@@ -160,6 +160,33 @@
 //    NSInteger rowNo = indexPath.row;
     
     return cell;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    self.hidesBottomBarWhenPushed = YES;
+//    MenuViewController *menuVC = [[MenuViewController alloc] init];
+//    menuVC.shopId = [[_shopData objectAtIndex:[indexPath row]] objectForKey:@"id"];
+//    [self.navigationController pushViewController:menuVC animated:YES];
+//    self.hidesBottomBarWhenPushed = NO;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 64.0f;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90.0f;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 
