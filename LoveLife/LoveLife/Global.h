@@ -1,15 +1,22 @@
 //
-//  config.h
+//  Global.h
 //  LoveLife
 //
-//  Created by 周 加飞 on 14-9-23.
+//  Created by 周 加飞 on 14-9-25.
 //  Copyright (c) 2014年 com.zhouxingxing.www. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef LoveLife_Global_h
+#define LoveLife_Global_h
 
-@protocol config <NSObject>
+#import "UIImageView+WebCache.h"
+#import "BaseNavigationController.h"
+#import "BaseViewController.h"
+#import "BaseTabBarController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "DataManage.h"
 
 #define SYSTEM_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
 
-@end
+#endif

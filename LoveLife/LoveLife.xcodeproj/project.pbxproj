@@ -194,6 +194,8 @@
 		66C4EF2C19D3A654001B5CDE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		66C4EF2D19D3A654001B5CDE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		66C4EF4019D3A735001B5CDE /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		66C4EF4319D3E634001B5CDE /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		66C4EF4419D3E643001B5CDE /* RequestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestApi.h; sourceTree = "<group>"; };
 		66DAA5D619D0FBF000D02D89 /* LoveLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66DAA5D919D0FBF000D02D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,7 +218,6 @@
 		66DAA60D19D100BD00D02D89 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		66DAA60F19D100D900D02D89 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		66DAA61019D100D900D02D89 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		66DAA61319D1010800D02D89 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		66DAA61D19D1094C00D02D89 /* icon_tuangou_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tuangou_selected@2x.png"; sourceTree = "<group>"; };
 		66DAA61E19D1094C00D02D89 /* icon_tuangou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tuangou@2x.png"; sourceTree = "<group>"; };
 		66DAA62119D109C600D02D89 /* icon_near_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_near_selected@2x.png"; sourceTree = "<group>"; };
@@ -504,7 +505,8 @@
 		66DAA61219D100F200D02D89 /* config */ = {
 			isa = PBXGroup;
 			children = (
-				66DAA61319D1010800D02D89 /* Global.h */,
+				66C4EF4419D3E643001B5CDE /* RequestApi.h */,
+				66C4EF4319D3E634001B5CDE /* Global.h */,
 			);
 			name = config;
 			sourceTree = "<group>";

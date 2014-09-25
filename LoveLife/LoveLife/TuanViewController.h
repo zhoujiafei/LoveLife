@@ -7,11 +7,14 @@
 //
 
 #import "BaseViewController.h"
+#import "EGORefreshTableHeaderView.h"
 
-@interface TuanViewController : BaseViewController <UIScrollViewDelegate>
+@interface TuanViewController : BaseViewController <UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic,strong) EGORefreshTableHeaderView *refreshTableHeaderView;
+@property (nonatomic,assign) BOOL reloading;
 
 @end
