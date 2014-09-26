@@ -108,8 +108,9 @@
 //请求团购列表数据
 -(void)requestTuanGouData
 {
-    NSString *getShopsUrl = [NSString stringWithFormat:@"%@/%@?app_key=%@&city=%@&q=%@&alt=json",kApiHost,kSearchShops,kAppKey,kCurrentCity,kSearchQ];
-    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:getShopsUrl]];
+    NSString *getShopsUrl = [NSString stringWithFormat:@"%@%@?app_key=%@&city=%@&q=%@&alt=json",kApiHost,kSearchShops,kAppKey,kCurrentCity,kSearchQ];
+    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[getShopsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    
     __weak ASIHTTPRequest *request = request_;
     [request setCompletionBlock:^{
         if ([request responseStatusCode] != 200)
@@ -123,8 +124,10 @@
         }
         
         NSData *data = [request responseData];
+        NSDictionary *allData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        NSLog(@"%@",data);
+        NSLog(@"%@",allData);
+        
         
         
         [_tableView reloadData];
