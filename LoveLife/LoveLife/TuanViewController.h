@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "EGORefreshTableHeaderView.h"
+#import "TuanTableViewCell.h"
 
 @interface TuanViewController : BaseViewController <UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate>
 

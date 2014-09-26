@@ -10,4 +10,8 @@
 
 @interface TuanTableViewCell : UITableViewCell
 
+@property (nonatomic,strong) UIImageView *indexPicView;
+@property (nonatomic,strong) UILabel *shopName;
+@property (nonatomic,strong) UILabel *address;
+
 @end
