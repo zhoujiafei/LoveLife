@@ -20,6 +20,7 @@
 @synthesize pageControl             = _pageControl;
 @synthesize reloading               = _reloading;
 @synthesize refreshTableHeaderView  = _refreshTableHeaderView;
+@synthesize shopData                = _shopData;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.view.backgroundColor = [UIColor purpleColor];
+        _shopData = [NSMutableArray array];
     }
     return self;
 }
@@ -72,9 +74,9 @@
 //    [self.view addSubview:_scrollView];
 //    [self.view addSubview:_pageControl];
     
-    
+    [self getCacheData];
     [self showTuanList];
-    
+    [self requestTuanGouData];
 }
 
 //显示团购列表
@@ -105,14 +107,27 @@
     
 }
 
+//获取列表缓存数据
+-(void)getCacheData
+{
+    NSString *getShopsUrl = [NSString stringWithFormat:@"%@%@?app_key=%@&city=%@&q=%@&alt=json",kApiHost,kSearchShops,kAppKey,kCurrentCity,kSearchQ];
+    NSArray *data = [[DataManage shareDataManage] getData:CACHE_NAME withNetworkApi:[getShopsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if (data)
+    {
+        [_shopData addObjectsFromArray:data];
+    }
+}
+
 //请求团购列表数据
 -(void)requestTuanGouData
 {
+    [ProgressHUD show:@"正在加载..."];
     NSString *getShopsUrl = [NSString stringWithFormat:@"%@%@?app_key=%@&city=%@&q=%@&alt=json",kApiHost,kSearchShops,kAppKey,kCurrentCity,kSearchQ];
-    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[getShopsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    
+    getShopsUrl = [getShopsUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    ASIHTTPRequest *request_ = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:getShopsUrl]];
     __weak ASIHTTPRequest *request = request_;
     [request setCompletionBlock:^{
+        [ProgressHUD dismiss];
         if ([request responseStatusCode] != 200)
         {
             return;
@@ -125,16 +140,23 @@
         
         NSData *data = [request responseData];
         NSDictionary *allData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray *shopArr = [[allData objectForKey:@"bizs"] objectForKey:@"biz"];
+        if ([shopArr count] <= 0)
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ProgressHUD showError:@"没有数据"];
+            });
+        }
         
-        NSLog(@"%@",allData);
-        
-        
-        
+        //保存数据
+        [[DataManage shareDataManage] insertData:CACHE_NAME withNetworkApi:getShopsUrl withObject:shopArr];
+        [_shopData removeAllObjects];
+        [_shopData addObjectsFromArray:shopArr];
         [_tableView reloadData];
         
     }];
     [request setFailedBlock:^{
-        
+        [ProgressHUD showError:@"网络连接错误"];
     }];
     [request startAsynchronous];
 }
@@ -145,7 +167,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [_shopData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,10 +180,13 @@
         cell = [[TuanTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-//    cell.textLabel.text = @"周加飞";
-    
-//    NSInteger rowNo = indexPath.row;
-    
+    NSInteger rowNo = indexPath.row;
+    [cell.indexPicView sd_setImageWithURL:[NSURL URLWithString:[[_shopData objectAtIndex:rowNo] objectForKey:@"img_url"]]
+                      placeholderImage:[UIImage imageNamed:@"1.png"]];
+    cell.shopName.text = [[_shopData objectAtIndex:rowNo] objectForKey:@"name"];//店名
+    cell.address.text  = [[_shopData objectAtIndex:rowNo] objectForKey:@"addr"];//地址
+    cell.tel.text      = [[_shopData objectAtIndex:rowNo] objectForKey:@"tel"];//电话
+    cell.price.text    = [NSString stringWithFormat:@"￥%@",[[_shopData objectAtIndex:rowNo] objectForKey:@"cost"]];//价格
     return cell;
 }
 

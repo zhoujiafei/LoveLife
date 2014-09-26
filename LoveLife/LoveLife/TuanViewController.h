@@ -17,5 +17,6 @@
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (nonatomic,strong) EGORefreshTableHeaderView *refreshTableHeaderView;
 @property (nonatomic,assign) BOOL reloading;
+@property (nonatomic,strong) NSMutableArray *shopData;
 
 @end

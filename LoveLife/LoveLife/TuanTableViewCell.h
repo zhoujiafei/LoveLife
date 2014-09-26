@@ -13,5 +13,7 @@
 @property (nonatomic,strong) UIImageView *indexPicView;
 @property (nonatomic,strong) UILabel *shopName;
 @property (nonatomic,strong) UILabel *address;
+@property (nonatomic,strong) UILabel *tel;
+@property (nonatomic,strong) UILabel *price;
 
 @end

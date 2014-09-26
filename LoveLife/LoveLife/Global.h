@@ -16,7 +16,11 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "DataManage.h"
+#import "ProgressHUD.h"
+//#import "UIImageView+WebCache.h"
 
 #define SYSTEM_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+#define CACHE_NAME @"data"
 
 #endif
