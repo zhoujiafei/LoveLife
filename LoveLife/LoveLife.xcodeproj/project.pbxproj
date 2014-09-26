@@ -90,6 +90,7 @@
 		66DAA63719D10E1300D02D89 /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63619D10E1300D02D89 /* NearViewController.m */; };
 		66DAA63A19D10E1C00D02D89 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63919D10E1C00D02D89 /* MyViewController.m */; };
 		66DAA63D19D10E2500D02D89 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63C19D10E2500D02D89 /* MoreViewController.m */; };
+		8BD8915A19D5B47F006F19FA /* PowerPointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8915919D5B47F006F19FA /* PowerPointTableViewCell.m */; };
 		8BE0301E19D451490060E7E6 /* TuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0301D19D451490060E7E6 /* TuanTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,8 @@
 		66DAA63919D10E1C00D02D89 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		66DAA63B19D10E2500D02D89 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		66DAA63C19D10E2500D02D89 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		8BD8915819D5B47F006F19FA /* PowerPointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPointTableViewCell.h; sourceTree = "<group>"; };
+		8BD8915919D5B47F006F19FA /* PowerPointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerPointTableViewCell.m; sourceTree = "<group>"; };
 		8BE0301C19D451490060E7E6 /* TuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuanTableViewCell.h; sourceTree = "<group>"; };
 		8BE0301D19D451490060E7E6 /* TuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuanTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -634,9 +637,17 @@
 			name = more;
 			sourceTree = "<group>";
 		};
+		8BD8915419D5B226006F19FA /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		8BE0301A19D4507D0060E7E6 /* component */ = {
 			isa = PBXGroup;
 			children = (
+				8BD8915419D5B226006F19FA /* view */,
 				8BE0301B19D450E80060E7E6 /* cell */,
 			);
 			name = component;
@@ -647,6 +658,8 @@
 			children = (
 				8BE0301C19D451490060E7E6 /* TuanTableViewCell.h */,
 				8BE0301D19D451490060E7E6 /* TuanTableViewCell.m */,
+				8BD8915819D5B47F006F19FA /* PowerPointTableViewCell.h */,
+				8BD8915919D5B47F006F19FA /* PowerPointTableViewCell.m */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -776,6 +789,7 @@
 				66C4EE9619D39829001B5CDE /* FMDatabase.m in Sources */,
 				66C4EE9419D39829001B5CDE /* DataManage.m in Sources */,
 				66DAA60E19D100BD00D02D89 /* BaseTabBarController.m in Sources */,
+				8BD8915A19D5B47F006F19FA /* PowerPointTableViewCell.m in Sources */,
 				66C4EE9719D39829001B5CDE /* FMDatabaseAdditions.m in Sources */,
 				66C4EEB319D398A7001B5CDE /* ASIDataCompressor.m in Sources */,
 				66C4EF3419D3A654001B5CDE /* SDWebImageDownloaderOperation.m in Sources */,

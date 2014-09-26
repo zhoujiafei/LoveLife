@@ -8,6 +8,7 @@
 
 #import "TuanViewController.h"
 #import "CityViewController.h"
+#import "PowerPointTableViewCell.h"
 
 @interface TuanViewController ()
 
@@ -167,27 +168,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_shopData count];
+    return [_shopData count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"cellId";
-    TuanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil)
-    {
-        cell = [[TuanTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    
     NSInteger rowNo = indexPath.row;
-    [cell.indexPicView sd_setImageWithURL:[NSURL URLWithString:[[_shopData objectAtIndex:rowNo] objectForKey:@"img_url"]]
-                      placeholderImage:[UIImage imageNamed:@"1.png"]];
-    cell.shopName.text = [[_shopData objectAtIndex:rowNo] objectForKey:@"name"];//店名
-    cell.address.text  = [[_shopData objectAtIndex:rowNo] objectForKey:@"addr"];//地址
-    cell.tel.text      = [[_shopData objectAtIndex:rowNo] objectForKey:@"tel"];//电话
-    cell.price.text    = [NSString stringWithFormat:@"￥%@",[[_shopData objectAtIndex:rowNo] objectForKey:@"cost"]];//价格
-    return cell;
+    if (rowNo == 0)
+    {
+        static NSString *cellId = @"PowerPoint";
+        PowerPointTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        
+        if (cell == nil)
+        {
+            cell = [[PowerPointTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        return cell;
+    }
+    else
+    {
+        static NSString *cellId = @"cellId";
+        TuanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        
+        if (cell == nil)
+        {
+            cell = [[TuanTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        
+        [cell.indexPicView sd_setImageWithURL:[NSURL URLWithString:[[_shopData objectAtIndex:rowNo - 1] objectForKey:@"img_url"]]
+                             placeholderImage:[UIImage imageNamed:@"1.png"]];
+        cell.shopName.text = [[_shopData objectAtIndex:rowNo - 1] objectForKey:@"name"];//店名
+        cell.address.text  = [[_shopData objectAtIndex:rowNo - 1] objectForKey:@"addr"];//地址
+        cell.tel.text      = [[_shopData objectAtIndex:rowNo - 1] objectForKey:@"tel"];//电话
+        cell.price.text    = [NSString stringWithFormat:@"￥%@",[[_shopData objectAtIndex:rowNo - 1] objectForKey:@"cost"]];//价格
+        return cell;
+    }
 }
 
 #pragma mark -
@@ -209,7 +224,14 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100.0f;
+    if (indexPath.row == 0)
+    {
+        return 200.0f;
+    }
+    else
+    {
+        return 100.0f;
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
