@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PowerPointTableViewCell : UITableViewCell
+@interface PowerPointTableViewCell : UITableViewCell <UIScrollViewDelegate>
+
+@property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) UIPageControl *pageControl;
 
 @end

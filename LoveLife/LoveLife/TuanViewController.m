@@ -43,38 +43,6 @@
                                              style:UIBarButtonItemStylePlain
                                              target:self
                                              action:@selector(showCitys)];
-    
-//    //初始化scrollView
-//    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 150)];
-//    _scrollView.pagingEnabled = YES;
-//    _scrollView.showsHorizontalScrollIndicator = NO;
-//    _scrollView.showsVerticalScrollIndicator = NO;
-//    _scrollView.bounces = YES;
-//    _scrollView.backgroundColor = [UIColor whiteColor];
-//    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 150);
-//    _scrollView.delegate = self;
-//    
-//    //在UIScrollView 上加入 UIImageView
-//    for (int i = 0 ; i < 2; i++)
-//    {
-//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width * i , 0, self.view.bounds.size.width, 150)];
-//        //将要加载的图片放入imageView 中
-//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]];
-//        imageView.image = image;
-//        [_scrollView addSubview:imageView];
-//    }
-//    
-//    //初始化pageControl
-//    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,64 + _scrollView.bounds.size.height,self.view.frame.size.width,20)];
-//    _pageControl.backgroundColor = [UIColor grayColor];
-//    _pageControl.currentPage = 0;
-//    _pageControl.numberOfPages = 2;
-//    _pageControl.userInteractionEnabled = YES;
-//    [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-//    
-//    [self.view addSubview:_scrollView];
-//    [self.view addSubview:_pageControl];
-    
     [self getCacheData];
     [self showTuanList];
     [self requestTuanGouData];
@@ -301,13 +269,6 @@
     CityViewController *cityVC = [[CityViewController alloc] init];
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:cityVC];
     [self presentViewController:nav animated:YES completion:nil];
-}
-
-//点击进行切换
--(void)changePage:(UIPageControl *)sender
-{
-    int page = sender.currentPage;
-    [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width * page, 0) animated:YES];
 }
 
 
