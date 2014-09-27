@@ -194,7 +194,7 @@
 {
     if (indexPath.row == 0)
     {
-        return 200.0f;
+        return 150.0f;
     }
     else
     {
@@ -270,24 +270,6 @@
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:cityVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
-
-
-#pragma mark-
-#pragma mark UIScrollViewDelegate
-
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//    CGFloat pageWidth = _scrollView.bounds.size.width;
-//    // 在滚动超过页面宽度的50%的时候，切换到新的页面
-//    int page = floor(_scrollView.contentOffset.x / pageWidth);
-//    _pageControl.currentPage = page;
-//}
-//
-//
-//-(void) scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//
-//}
 
 - (void)didReceiveMemoryWarning
 {

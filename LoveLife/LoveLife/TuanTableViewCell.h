@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TuanTableViewCell : UITableViewCell
+@interface TuanTableViewCell : UITableViewCell <UIScrollViewDelegate>
 
 @property (nonatomic,strong) UIImageView *indexPicView;
 @property (nonatomic,strong) UILabel *shopName;
