@@ -15,9 +15,25 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        self.backgroundColor = [UIColor redColor];
+        //创建按钮
+        UIButton *seeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        seeBtn.frame = CGRectMake(0,0, self.frame.size.width, self.frame.size.height);
+        seeBtn.backgroundColor = [UIColor whiteColor];
+        [seeBtn setTitle:@"查看全部团购" forState:UIControlStateNormal];
+        [seeBtn addTarget:self action:@selector(seeAllTuanGou:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:seeBtn];
+        
+        //添加一条线
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 50.0-0.5, self.bounds.size.width, 0.5)];
+        line.backgroundColor = [UIColor colorWithRed:213.0f/255.0f green:213.0f/255.0f blue:213.0f/255.0f alpha:1.0];
+        [self addSubview:line];
     }
     return self;
+}
+
+-(void)seeAllTuanGou:(id)sender
+{
+    NSLog(@"查看全部团购");
 }
 
 - (void)awakeFromNib
