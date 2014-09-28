@@ -9,6 +9,7 @@
 #import "TuanViewController.h"
 #import "CityViewController.h"
 #import "PowerPointTableViewCell.h"
+#import "SeeAllTuanTableViewCell.h"
 
 @interface TuanViewController ()
 
@@ -136,13 +137,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_shopData count] + 1;
+    return [_shopData count] + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger rowNo = indexPath.row;
-    if (rowNo == 0)
+    if (rowNo == 0)//第一个
     {
         static NSString *cellId = @"PowerPoint";
         PowerPointTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -150,6 +151,17 @@
         if (cell == nil)
         {
             cell = [[PowerPointTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        return cell;
+    }
+    else if(rowNo == ([_shopData count] + 1))//最后一个
+    {
+        static NSString *cellId = @"SeeAllTaun";
+        SeeAllTuanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        
+        if (cell == nil)
+        {
+            cell = [[SeeAllTuanTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         return cell;
     }
@@ -192,9 +204,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0)
+    if (indexPath.row == 0)//第一个
     {
         return 150.0f;
+    }
+    else if(indexPath.row == ([_shopData count] + 1))//最后一个
+    {
+        return 50.0f;
     }
     else
     {

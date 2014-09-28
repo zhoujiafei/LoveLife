@@ -65,7 +65,7 @@
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = 2;
         _pageControl.userInteractionEnabled = YES;
-        _pageControl.pageIndicatorTintColor = [UIColor grayColor];
+        _pageControl.pageIndicatorTintColor = [UIColor colorWithRed:213.0f/255.0f green:213.0f/255.0f blue:213.0f/255.0f alpha:1.0];
         _pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
         [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
         

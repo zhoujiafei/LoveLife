@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		664560FE19D2736A00392229 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 664560FD19D2736A00392229 /* 2.png */; };
+		6697CC5C19D78DF600004B56 /* SeeAllTuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697CC5B19D78DF600004B56 /* SeeAllTuanTableViewCell.m */; };
 		66A7757219D11FEE0039800B /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A7757119D11FEE0039800B /* CityViewController.m */; };
 		66A7757419D124860039800B /* ump_icon_back_foucs.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757319D124860039800B /* ump_icon_back_foucs.png */; };
 		66A7757619D1258F0039800B /* deatil_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */; };
@@ -127,6 +128,8 @@
 
 /* Begin PBXFileReference section */
 		664560FD19D2736A00392229 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		6697CC5A19D78DF600004B56 /* SeeAllTuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAllTuanTableViewCell.h; sourceTree = "<group>"; };
+		6697CC5B19D78DF600004B56 /* SeeAllTuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAllTuanTableViewCell.m; sourceTree = "<group>"; };
 		66A7757019D11FEE0039800B /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
 		66A7757119D11FEE0039800B /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		66A7757319D124860039800B /* ump_icon_back_foucs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ump_icon_back_foucs.png; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 				8BE0301D19D451490060E7E6 /* TuanTableViewCell.m */,
 				8BD8915819D5B47F006F19FA /* PowerPointTableViewCell.h */,
 				8BD8915919D5B47F006F19FA /* PowerPointTableViewCell.m */,
+				6697CC5A19D78DF600004B56 /* SeeAllTuanTableViewCell.h */,
+				6697CC5B19D78DF600004B56 /* SeeAllTuanTableViewCell.m */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -911,6 +916,7 @@
 				66C4EF3B19D3A654001B5CDE /* UIImageView+HighlightedWebCache.m in Sources */,
 				66C4EF2F19D3A654001B5CDE /* NSData+ImageContentType.m in Sources */,
 				66C4EEB919D398A7001B5CDE /* ASINetworkQueue.m in Sources */,
+				6697CC5C19D78DF600004B56 /* SeeAllTuanTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
