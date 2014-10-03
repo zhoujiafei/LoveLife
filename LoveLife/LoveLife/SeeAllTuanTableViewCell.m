@@ -20,6 +20,7 @@
         seeBtn.frame = CGRectMake(0,0, self.frame.size.width, self.frame.size.height);
         seeBtn.backgroundColor = [UIColor whiteColor];
         [seeBtn setTitle:@"查看全部团购" forState:UIControlStateNormal];
+        [seeBtn setTintColor:[UIColor grayColor]];
         [seeBtn addTarget:self action:@selector(seeAllTuanGou:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:seeBtn];
         

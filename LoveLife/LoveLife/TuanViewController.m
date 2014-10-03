@@ -10,6 +10,7 @@
 #import "CityViewController.h"
 #import "PowerPointTableViewCell.h"
 #import "SeeAllTuanTableViewCell.h"
+#import "HeaderTableViewCell.h"
 
 @interface TuanViewController ()
 
@@ -146,11 +147,11 @@
     if (rowNo == 0)//第一个
     {
         static NSString *cellId = @"PowerPoint";
-        PowerPointTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        HeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         
         if (cell == nil)
         {
-            cell = [[PowerPointTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell = [[HeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
         return cell;
     }
