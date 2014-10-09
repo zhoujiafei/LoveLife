@@ -14,6 +14,8 @@
 
 @implementation CityViewController
 
+@synthesize searchBar = _searchBar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,15 +35,13 @@
                                              target:self
                                              action:@selector(backToTuanGou)];
     
+    //搜索栏
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width,40)];
+    _searchBar.placeholder = @"请输入要查找的城市...";
+    _searchBar.showsCancelButton = YES;
+    _searchBar.keyboardType = UIKeyboardTypeDefault;
     
-    
-    
-    
-    
-    
-    
-    
-    
+    [self.view addSubview:_searchBar];
     
 }
 
