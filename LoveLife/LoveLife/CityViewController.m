@@ -14,7 +14,8 @@
 
 @implementation CityViewController
 
-@synthesize searchBar = _searchBar;
+@synthesize searchBar     = _searchBar;
+@synthesize searchDisplay = _searchDisplay;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,9 +42,34 @@
     _searchBar.showsCancelButton = YES;
     _searchBar.keyboardType = UIKeyboardTypeDefault;
     
+    _searchDisplay = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
+    _searchDisplay.delegate = self;
+//    _searchDisplay.searchResultsDataSource = self;
+//    _searchDisplay.searchResultsDelegate = self;
+    
+    
+    
     [self.view addSubview:_searchBar];
     
 }
+
+#pragma mark -
+#pragma mark UISearchDisplayDelegate
+
+- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+{
+    [_searchBar setShowsCancelButton:YES];
+    for (UIView *v in _searchBar.subviews)
+    {
+        if ([v isKindOfClass:[UIButton class]])
+        {
+            [(UIButton *)v setTitle:@"返回" forState:UIControlStateNormal];
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Other Methods
 
 -(void)backToTuanGou
 {

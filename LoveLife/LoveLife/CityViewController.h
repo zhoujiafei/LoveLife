@@ -8,8 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface CityViewController : BaseViewController <UISearchBarDelegate>
+@interface CityViewController : BaseViewController <UISearchBarDelegate,UISearchDisplayDelegate>
 
 @property (nonatomic,strong) UISearchBar *searchBar;
+@property (nonatomic,strong) UISearchDisplayController *searchDisplay;
 
 @end
