@@ -54,6 +54,7 @@
 //初始化数据源
 -(void)initDataSource
 {
+    _isSearch = NO;
     _sourceData = [NSMutableArray array];
     _resultData = [NSMutableArray array];
 }
@@ -61,7 +62,7 @@
 //初始化table
 -(void)initTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStyleGrouped];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     
@@ -81,7 +82,6 @@
     _searchBar.placeholder = @"请输入要搜索的城市...";
     _searchBar.delegate = self;
     [_searchBar sizeToFit];
-//    [_searchBar setScopeButtonTitles:@[@"A",@"B"]];
     
     _tableView.tableHeaderView = _searchBar;
     
@@ -95,6 +95,11 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
 }
@@ -123,18 +128,50 @@
     return cell;
 }
 
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+//点击取消按钮
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    _isSearch = NO;
+}
+
+//搜索框内的文本发生变化时
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    _isSearch = YES;
+}
+
+//点击虚拟键盘上的搜索时
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    //隐藏键盘
+    [searchBar resignFirstResponder];
+}
 
 #pragma mark -
 #pragma mark UISearchDisplayDelegate
 
 - (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
-    [_searchBar setShowsCancelButton:YES];
-    for (UIView *v in _searchBar.subviews)
+    _searchBar.showsCancelButton = YES;
+    NSArray *subViews;
+    if (IS_IOS_7)
     {
-        if ([v isKindOfClass:[UIButton class]])
+        subViews = [(_searchBar.subviews[0]) subviews];
+    }
+    else {
+        subViews = _searchBar.subviews;
+    }
+    
+    for (id view in subViews)
+    {
+        if ([view isKindOfClass:[UIButton class]])
         {
-            [(UIButton *)v setTitle:@"返回" forState:UIControlStateNormal];
+            UIButton* cancelbutton = (UIButton* )view;
+            [cancelbutton setTitle:@"取消" forState:UIControlStateNormal];
+            break;
         }
     }
 }
