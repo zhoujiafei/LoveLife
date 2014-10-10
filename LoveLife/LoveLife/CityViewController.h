@@ -8,9 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface CityViewController : BaseViewController <UISearchBarDelegate,UISearchDisplayDelegate>
+@interface CityViewController : BaseViewController <UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UISearchBar *searchBar;
 @property (nonatomic,strong) UISearchDisplayController *searchDisplay;
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *sourceData;
+@property (nonatomic,strong) NSMutableArray *resultData;
+@property (nonatomic,assign) BOOL isSearch;
 
 @end

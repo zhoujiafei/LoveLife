@@ -23,4 +23,6 @@
 
 #define CACHE_NAME @"data"
 
+#define IS_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
 #endif
