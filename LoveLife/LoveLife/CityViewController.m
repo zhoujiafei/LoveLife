@@ -61,11 +61,9 @@
 //初始化table
 -(void)initTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 104, self.view.bounds.size.width, self.view.bounds.size.height - 104) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
-    
-    _tableView.tableHeaderView = [[UIView alloc] init];
     
     if (IS_IOS_7)
     {
@@ -79,12 +77,13 @@
 -(void)initSearchBar
 {
     //搜索栏
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 40)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 40)];
     _searchBar.placeholder = @"请输入要搜索的城市...";
     _searchBar.delegate = self;
     [_searchBar sizeToFit];
+//    [_searchBar setScopeButtonTitles:@[@"A",@"B"]];
     
-    [_tableView.tableHeaderView addSubview:_searchBar];
+    _tableView.tableHeaderView = _searchBar;
     
     _searchDisplay = [[UISearchDisplayController alloc] initWithSearchBar:_searchBar contentsController:self];
     _searchDisplay.delegate = self;
