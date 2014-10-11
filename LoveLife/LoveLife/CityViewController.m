@@ -55,7 +55,19 @@
 -(void)initDataSource
 {
     _isSearch = NO;
+    
+    //构建列表数据
     _sourceData = [NSMutableArray array];
+    for (int section = 'A'; section <='Z'; section ++)
+    {
+        NSMutableArray *itemArr = [NSMutableArray array];
+        for (int row = 0; row < 5; row ++)
+        {
+            NSString *name = [NSString stringWithFormat:@"%c%d",section,row];
+            [itemArr addObject:name];
+        }
+        [_sourceData addObject:itemArr];
+    }
     _resultData = [NSMutableArray array];
 }
 
@@ -96,12 +108,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    NSMutableArray *eachArr = [_sourceData objectAtIndex:section];
+    return [eachArr count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [_sourceData count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionName = [NSString stringWithFormat:@"第%c段",'A' + section];
+    return sectionName;
+}
+
+//建立索引
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSMutableArray *indexData = [NSMutableArray array];
+    [indexData addObject:UITableViewIndexSearch];
+    for (NSInteger i = 0; i<26; i++)
+    {
+        NSString *item = [NSString stringWithFormat:@"%c",'A' + i];
+        [indexData addObject:item];
+    }
+    [indexData addObject:@"end"];
+    return indexData;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
