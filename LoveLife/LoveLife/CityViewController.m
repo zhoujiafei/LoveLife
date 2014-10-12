@@ -74,7 +74,7 @@
 //初始化table
 -(void)initTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     
@@ -136,6 +136,21 @@
     [indexData addObject:@"end"];
     return indexData;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    if (title == UITableViewIndexSearch)
+    {
+        return -1;
+    }
+    
+    if ([title isEqualToString:@"end"])
+    {
+        return -1;
+    }
+    return index -1;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
