@@ -18,6 +18,7 @@
 @synthesize searchDisplay = _searchDisplay;
 @synthesize sourceData    = _sourceData;
 @synthesize resultData    = _resultData;
+@synthesize indexData     = _indexData;
 @synthesize isSearch      = _isSearch;
 @synthesize tableView     = _tableView;
 
@@ -56,25 +57,23 @@
 {
     _isSearch = NO;
     
-    //构建列表数据
-    _sourceData = [NSMutableArray array];
-    for (int section = 'A'; section <='Z'; section ++)
+    //读取城市数据
+    NSString *cityDataPath = [[NSBundle mainBundle] pathForResource:@"city" ofType:@"plist"];
+    NSMutableDictionary *cityData = [[NSMutableDictionary alloc] initWithContentsOfFile:cityDataPath];
+
+    _sourceData = [NSMutableArray array];//用于列表显示的城市数据
+    _resultData = [NSMutableArray array];//保存搜索结果数据
+    
+    NSArray *sortIndexData = [[cityData allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        NSComparisonResult result = [obj1 compare:obj2];
+        return result == NSOrderedDescending;
+    }];
+    _indexData = [NSMutableArray arrayWithArray:sortIndexData];//构建索引数据
+    
+    for (NSString *name in cityData)
     {
-        NSMutableArray *itemArr = [NSMutableArray array];
-        for (int row = 0; row < 5; row ++)
-        {
-            NSString *name = [NSString stringWithFormat:@"%c%d",section,row];
-            [itemArr addObject:name];
-        }
-        [_sourceData addObject:itemArr];
+        [_sourceData addObject:[cityData objectForKey:name]];
     }
-    
-    NSLog(@"%@",_sourceData);
-    
-    
-    
-    
-    _resultData = [NSMutableArray array];
 }
 
 //初始化table
@@ -125,22 +124,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSString *sectionName = [NSString stringWithFormat:@"第%c段",'A' + section];
-    return sectionName;
+    return [_indexData objectAtIndex:section];
 }
 
 //建立索引
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    NSMutableArray *indexData = [NSMutableArray array];
-    [indexData addObject:UITableViewIndexSearch];
-    for (NSInteger i = 0; i<26; i++)
-    {
-        NSString *item = [NSString stringWithFormat:@"%c",'A' + i];
-        [indexData addObject:item];
-    }
-    [indexData addObject:@"end"];
-    return indexData;
+    NSMutableArray *indexArr = [NSMutableArray array];
+    [indexArr addObject:UITableViewIndexSearch];
+    [indexArr addObjectsFromArray:_indexData];
+    [indexArr addObject:@"end"];
+    return indexArr;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
@@ -168,16 +162,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    NSInteger rowNo = indexPath.row;
+    NSInteger sectionNo = indexPath.section;
+    NSInteger rowNo     = indexPath.row;
     
     //正在搜索
     if (_isSearch)
     {
-        cell.textLabel.text = [NSString stringWithFormat:@"在搜索%d",rowNo];
+        cell.textLabel.text = [NSString stringWithFormat:@"你好%d",rowNo];
     }
     else
     {
-        cell.textLabel.text = [NSString stringWithFormat:@"你好%d",rowNo];
+        cell.textLabel.text = [[_sourceData objectAtIndex:sectionNo] objectAtIndex:rowNo];
     }
     return cell;
 }
