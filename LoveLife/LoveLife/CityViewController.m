@@ -69,10 +69,10 @@
         return result == NSOrderedDescending;
     }];
     _indexData = [NSMutableArray arrayWithArray:sortIndexData];//构建索引数据
-    
-    for (NSString *name in cityData)
+
+    for (NSInteger i = 0; i < [_indexData count]; i++)
     {
-        [_sourceData addObject:[cityData objectForKey:name]];
+        [_sourceData addObject:[cityData objectForKey:[_indexData objectAtIndex:i]]];
     }
 }
 
@@ -124,7 +124,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [_indexData objectAtIndex:section];
+    return [NSString stringWithFormat:@"  %@",[_indexData objectAtIndex:section]];
 }
 
 //建立索引
