@@ -64,6 +64,7 @@
 		66C4EF3C19D3A654001B5CDE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EF2B19D3A654001B5CDE /* UIImageView+WebCache.m */; };
 		66C4EF3D19D3A654001B5CDE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EF2D19D3A654001B5CDE /* UIView+WebCacheOperation.m */; };
 		66C4EF4119D3A735001B5CDE /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C4EF4019D3A735001B5CDE /* SDWebImage.framework */; };
+		66D2322519ECA6F0008F9697 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D2322419ECA6F0008F9697 /* city.plist */; };
 		66DAA5DA19D0FBF000D02D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5D919D0FBF000D02D89 /* Foundation.framework */; };
 		66DAA5DC19D0FBF000D02D89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */; };
 		66DAA5DE19D0FBF000D02D89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5DD19D0FBF000D02D89 /* UIKit.framework */; };
@@ -228,6 +229,7 @@
 		66C4EF4019D3A735001B5CDE /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		66C4EF4319D3E634001B5CDE /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		66C4EF4419D3E643001B5CDE /* RequestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestApi.h; sourceTree = "<group>"; };
+		66D2322419ECA6F0008F9697 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		66DAA5D619D0FBF000D02D89 /* LoveLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66DAA5D919D0FBF000D02D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -476,6 +478,14 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		66D2322319ECA626008F9697 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				66D2322419ECA6F0008F9697 /* city.plist */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		66DAA5CD19D0FBF000D02D89 = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +526,7 @@
 		66DAA5DF19D0FBF000D02D89 /* LoveLife */ = {
 			isa = PBXGroup;
 			children = (
+				66D2322319ECA626008F9697 /* data */,
 				8BE0301A19D4507D0060E7E6 /* component */,
 				66DAA62D19D10D2500D02D89 /* app */,
 				66DAA61819D1088000D02D89 /* lib */,
@@ -817,6 +828,7 @@
 				8BCACD1B19D7041E00CD40B0 /* icon_14@2x.png in Resources */,
 				8BCACD1719D7041E00CD40B0 /* icon_10@2x.png in Resources */,
 				8BCACD1419D7041E00CD40B0 /* icon_2@2x.png in Resources */,
+				66D2322519ECA6F0008F9697 /* city.plist in Resources */,
 				8BCACD2019D7041E00CD40B0 /* icon_5@2x.png in Resources */,
 				66DAA61F19D1094C00D02D89 /* icon_tuangou_selected@2x.png in Resources */,
 				8BCACD1519D7041E00CD40B0 /* icon_4@2x.png in Resources */,

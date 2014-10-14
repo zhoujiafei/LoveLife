@@ -68,6 +68,12 @@
         }
         [_sourceData addObject:itemArr];
     }
+    
+    NSLog(@"%@",_sourceData);
+    
+    
+    
+    
     _resultData = [NSMutableArray array];
 }
 
