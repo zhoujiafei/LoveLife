@@ -40,25 +40,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self initLocation];
+    [self initNavBar];
+    [self getCacheData];
+    [self showTuanList];
+    [self requestTuanGouData];
+}
+
+-(void)initNavBar
+{
     //设置显示最左边的当前城市
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithTitle:@"南京"
                                              style:UIBarButtonItemStylePlain
                                              target:self
                                              action:@selector(showCitys)];
-    [self getCacheData];
-    [self showTuanList];
-    [self requestTuanGouData];
 }
 
 //初始化定位
 -(void)initLocation
 {
-    
-    
-    
-    
-    
+    _locationManager = [[CLLocationManager alloc] init];//创建位置管理器
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.distanceFilter = 10.0f;
+    [_locationManager startUpdatingLocation];
 }
 
 //显示团购列表
@@ -286,6 +293,32 @@
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
 {
     return _reloading;
+}
+
+#pragma mark
+#pragma mark CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [_locationManager stopUpdatingLocation];
+     NSLog(@"location ok");
+    
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];//创建坐标解析器
+    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        for (CLPlacemark * placemark in placemarks) {
+            
+            NSDictionary *localInfo = [placemark addressDictionary];
+            //  Country(国家)  State(城市)  SubLocality(区)
+            NSLog(@"%@", [localInfo objectForKey:@"State"]);
+            
+            NSUserDefaults *userDefaults = [[NSUserDefaults alloc] init];
+            [userDefaults setObject:@"current_city" forKey:[localInfo objectForKey:@"State"]];
+        }
+    }];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@",error);
 }
 
 #pragma mark-

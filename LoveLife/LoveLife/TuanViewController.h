@@ -10,7 +10,7 @@
 #import "EGORefreshTableHeaderView.h"
 #import "TuanTableViewCell.h"
 
-@interface TuanViewController : BaseViewController <UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate>
+@interface TuanViewController : BaseViewController <UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,CLLocationManagerDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UIScrollView *scrollView;
