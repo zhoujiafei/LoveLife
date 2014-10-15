@@ -92,6 +92,7 @@
 		66DAA63719D10E1300D02D89 /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63619D10E1300D02D89 /* NearViewController.m */; };
 		66DAA63A19D10E1C00D02D89 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63919D10E1C00D02D89 /* MyViewController.m */; };
 		66DAA63D19D10E2500D02D89 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DAA63C19D10E2500D02D89 /* MoreViewController.m */; };
+		66F1C40819EE03A50048A144 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F1C40719EE03A50048A144 /* CoreLocation.framework */; };
 		8B33041719DE281700053866 /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B33041619DE281700053866 /* HeaderTableViewCell.m */; };
 		8BCACD1219D7041E00CD40B0 /* icon_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCACCFE19D7041E00CD40B0 /* icon_8@2x.png */; };
 		8BCACD1319D7041E00CD40B0 /* icon_16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCACCFF19D7041E00CD40B0 /* icon_16@2x.png */; };
@@ -120,6 +121,20 @@
 
 /* Begin PBXContainerItemProxy section */
 		66DAA5F619D0FBF000D02D89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66DAA5CE19D0FBF000D02D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66DAA5D519D0FBF000D02D89;
+			remoteInfo = LoveLife;
+		};
+		66F1C40119EE02F10048A144 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66DAA5CE19D0FBF000D02D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66DAA5D519D0FBF000D02D89;
+			remoteInfo = LoveLife;
+		};
+		66F1C40319EE02F10048A144 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 66DAA5CE19D0FBF000D02D89 /* Project object */;
 			proxyType = 1;
@@ -268,6 +283,7 @@
 		66DAA63919D10E1C00D02D89 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		66DAA63B19D10E2500D02D89 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		66DAA63C19D10E2500D02D89 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		66F1C40719EE03A50048A144 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8B33041519DE281700053866 /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderTableViewCell.h; sourceTree = "<group>"; };
 		8B33041619DE281700053866 /* HeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderTableViewCell.m; sourceTree = "<group>"; };
 		8BCACCFE19D7041E00CD40B0 /* icon_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_8@2x.png"; sourceTree = "<group>"; };
@@ -302,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F1C40819EE03A50048A144 /* CoreLocation.framework in Frameworks */,
 				66C4EF4119D3A735001B5CDE /* SDWebImage.framework in Frameworks */,
 				66C4EF0B19D3A021001B5CDE /* ImageIO.framework in Frameworks */,
 				66C4EF0719D399F8001B5CDE /* libsqlite3.0.dylib in Frameworks */,
@@ -508,6 +525,7 @@
 		66DAA5D819D0FBF000D02D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66F1C40719EE03A50048A144 /* CoreLocation.framework */,
 				66C4EF4019D3A735001B5CDE /* SDWebImage.framework */,
 				66C4EF0A19D3A021001B5CDE /* ImageIO.framework */,
 				66C4EF0619D399F8001B5CDE /* libsqlite3.0.dylib */,
@@ -780,6 +798,8 @@
 			);
 			dependencies = (
 				66DAA5F719D0FBF000D02D89 /* PBXTargetDependency */,
+				66F1C40219EE02F10048A144 /* PBXTargetDependency */,
+				66F1C40419EE02F10048A144 /* PBXTargetDependency */,
 			);
 			name = LoveLifeTests;
 			productName = LoveLifeTests;
@@ -954,6 +974,16 @@
 			target = 66DAA5D519D0FBF000D02D89 /* LoveLife */;
 			targetProxy = 66DAA5F619D0FBF000D02D89 /* PBXContainerItemProxy */;
 		};
+		66F1C40219EE02F10048A144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66DAA5D519D0FBF000D02D89 /* LoveLife */;
+			targetProxy = 66F1C40119EE02F10048A144 /* PBXContainerItemProxy */;
+		};
+		66F1C40419EE02F10048A144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66DAA5D519D0FBF000D02D89 /* LoveLife */;
+			targetProxy = 66F1C40319EE02F10048A144 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1059,6 +1089,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LoveLife/LoveLife-Prefix.pch";
 				INFOPLIST_FILE = "LoveLife/LoveLife-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1078,6 +1109,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LoveLife/LoveLife-Prefix.pch";
 				INFOPLIST_FILE = "LoveLife/LoveLife-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

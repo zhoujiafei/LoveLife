@@ -17,7 +17,7 @@
 #import "ASIFormDataRequest.h"
 #import "DataManage.h"
 #import "ProgressHUD.h"
-//#import "UIImageView+WebCache.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define SYSTEM_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
 

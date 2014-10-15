@@ -24,6 +24,7 @@
 @synthesize reloading               = _reloading;
 @synthesize refreshTableHeaderView  = _refreshTableHeaderView;
 @synthesize shopData                = _shopData;
+@synthesize locationManager         = _locationManager;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,6 +49,16 @@
     [self getCacheData];
     [self showTuanList];
     [self requestTuanGouData];
+}
+
+//初始化定位
+-(void)initLocation
+{
+    
+    
+    
+    
+    
 }
 
 //显示团购列表

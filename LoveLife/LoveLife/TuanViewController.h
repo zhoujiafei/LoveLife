@@ -18,5 +18,6 @@
 @property (nonatomic,strong) EGORefreshTableHeaderView *refreshTableHeaderView;
 @property (nonatomic,assign) BOOL reloading;
 @property (nonatomic,strong) NSMutableArray *shopData;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 
 @end
