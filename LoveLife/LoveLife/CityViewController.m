@@ -113,28 +113,56 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSMutableArray *eachArr = [_sourceData objectAtIndex:section];
-    return [eachArr count];
+    if (_isSearch)
+    {
+        return [_resultData count];
+    }
+    else
+    {
+        NSMutableArray *eachArr = [_sourceData objectAtIndex:section];
+        return [eachArr count];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [_sourceData count];
+    if (_isSearch)
+    {
+        return 1;
+    }
+    else
+    {
+        return [_sourceData count];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"  %@",[_indexData objectAtIndex:section]];
+    if (_isSearch)
+    {
+        return nil;
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"  %@",[_indexData objectAtIndex:section]];
+    }
 }
 
 //建立索引
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    NSMutableArray *indexArr = [NSMutableArray array];
-    [indexArr addObject:UITableViewIndexSearch];
-    [indexArr addObjectsFromArray:_indexData];
-    [indexArr addObject:@"end"];
-    return indexArr;
+    if (_isSearch)
+    {
+        return nil;
+    }
+    else
+    {
+        NSMutableArray *indexArr = [NSMutableArray array];
+        [indexArr addObject:UITableViewIndexSearch];
+        [indexArr addObjectsFromArray:_indexData];
+        [indexArr addObject:@"end"];
+        return indexArr;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
@@ -168,7 +196,7 @@
     //正在搜索
     if (_isSearch)
     {
-        cell.textLabel.text = [NSString stringWithFormat:@"你好%d",rowNo];
+        cell.textLabel.text = @"北京";
     }
     else
     {
@@ -189,7 +217,7 @@
 //搜索框内的文本发生变化时
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    _isSearch = YES;
+    [self filterBySubstring:searchBar.text];
 }
 
 //点击虚拟键盘上的搜索时
@@ -197,6 +225,7 @@
 {
     //隐藏键盘
     [searchBar resignFirstResponder];
+    [self filterBySubstring:searchBar.text];
 }
 
 #pragma mark -
@@ -228,9 +257,22 @@
 #pragma mark -
 #pragma mark Other Methods
 
+//返回到首页
 -(void)backToTuanGou
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//执行搜索的方法
+-(void)filterBySubstring:(NSString *)subStr
+{
+    _isSearch = YES;//设置为开始搜索
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",subStr];
+    //使用谓词过滤
+    [_resultData removeAllObjects];
+    [_resultData addObjectsFromArray:[_sourceData filteredArrayUsingPredicate:pred]];
+    
+    NSLog(@"%@",_resultData);
 }
 
 - (void)didReceiveMemoryWarning
