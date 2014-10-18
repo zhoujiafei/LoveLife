@@ -18,6 +18,7 @@
 @synthesize searchDisplay = _searchDisplay;
 @synthesize sourceData    = _sourceData;
 @synthesize resultData    = _resultData;
+@synthesize searchData    = _searchData;
 @synthesize indexData     = _indexData;
 @synthesize isSearch      = _isSearch;
 @synthesize tableView     = _tableView;
@@ -63,6 +64,7 @@
 
     _sourceData = [NSMutableArray array];//用于列表显示的城市数据
     _resultData = [NSMutableArray array];//保存搜索结果数据
+    _searchData = [NSMutableArray array];//用于搜索匹配的数据
     
     NSArray *sortIndexData = [[cityData allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
         NSComparisonResult result = [obj1 compare:obj2];
@@ -73,6 +75,15 @@
     for (NSInteger i = 0; i < [_indexData count]; i++)
     {
         [_sourceData addObject:[cityData objectForKey:[_indexData objectAtIndex:i]]];
+    }
+    
+    //构建一维数组
+    for (NSInteger i = 0; i < [_sourceData count]; i++)
+    {
+        for (NSInteger j = 0; j < [[_sourceData objectAtIndex:i] count]; j++)
+        {
+            [_searchData addObject:[[_sourceData objectAtIndex:i] objectAtIndex:j]];
+        }
     }
 }
 
@@ -196,7 +207,7 @@
     //正在搜索
     if (_isSearch)
     {
-        cell.textLabel.text = @"北京";
+        cell.textLabel.text = [_resultData objectAtIndex:rowNo];
     }
     else
     {
@@ -270,9 +281,7 @@
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",subStr];
     //使用谓词过滤
     [_resultData removeAllObjects];
-    [_resultData addObjectsFromArray:[_sourceData filteredArrayUsingPredicate:pred]];
-    
-    NSLog(@"%@",_resultData);
+    [_resultData addObjectsFromArray:[_searchData filteredArrayUsingPredicate:pred]];
 }
 
 - (void)didReceiveMemoryWarning

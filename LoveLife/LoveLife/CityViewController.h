@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSMutableArray *sourceData;
 @property (nonatomic,strong) NSMutableArray *resultData;
 @property (nonatomic,strong) NSMutableArray *indexData;
+@property (nonatomic,strong) NSMutableArray *searchData;
 @property (nonatomic,assign) BOOL isSearch;
 
 @end
