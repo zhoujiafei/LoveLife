@@ -307,6 +307,7 @@
         for (CLPlacemark * placemark in placemarks) {
             
             NSDictionary *localInfo = [placemark addressDictionary];
+            
             //  Country(国家)  State(城市)  SubLocality(区)
             NSLog(@"%@", [localInfo objectForKey:@"State"]);
             
