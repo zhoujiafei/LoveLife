@@ -20,8 +20,9 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
+    if (self)
+    {
+        self.title = @"更多";
     }
     return self;
 }
@@ -29,43 +30,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     [self initDataSource];
     [self initTableview];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+#pragma mark 
+#pragma mark Init Methods
 
 //初始化数据源
 -(void)initDataSource
 {
-    
-    
-    
-    
-    
+    _dataSource = [NSMutableArray arrayWithObjects:@[@"仅WIFI下显示图片",@"提醒设置",@"分享设置",@"清除缓存"],
+                                                   @[@"赏个好评",@"意见反馈",@"联系客服"],
+                                                   @[@"检查更新",@"关于"],nil];
 }
 
 //初始化tableView
 -(void)initTableview
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 106) style:UITableViewStyleGrouped];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     
@@ -82,12 +65,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [[_dataSource objectAtIndex:section] count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [_dataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,27 +82,32 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    NSInteger rowNo = indexPath.row;
-    cell.textLabel.text = @"111";
+    NSInteger section = indexPath.section;
+    NSInteger rowNo   = indexPath.row;
+    cell.textLabel.text = [[_dataSource objectAtIndex:section] objectAtIndex:rowNo];
     return cell;
 }
 
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1;
+}
+
+#pragma mark 
+#pragma mark Other Methods
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
