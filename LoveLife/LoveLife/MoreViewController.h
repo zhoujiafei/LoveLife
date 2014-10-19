@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface MoreViewController : BaseViewController
+@interface MoreViewController : BaseViewController <UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end
