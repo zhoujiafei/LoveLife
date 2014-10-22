@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6604C02B19F770AD002B4CE2 /* user_icon_favortite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6604C02819F770AD002B4CE2 /* user_icon_favortite@2x.png */; };
+		6604C02C19F770AD002B4CE2 /* user_icon_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6604C02919F770AD002B4CE2 /* user_icon_history@2x.png */; };
+		6604C02D19F770AD002B4CE2 /* user_icon_lashouquan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6604C02A19F770AD002B4CE2 /* user_icon_lashouquan@2x.png */; };
 		664560FE19D2736A00392229 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 664560FD19D2736A00392229 /* 2.png */; };
 		6697CC5C19D78DF600004B56 /* SeeAllTuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697CC5B19D78DF600004B56 /* SeeAllTuanTableViewCell.m */; };
 		66A7757219D11FEE0039800B /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A7757119D11FEE0039800B /* CityViewController.m */; };
@@ -147,6 +150,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6604C02819F770AD002B4CE2 /* user_icon_favortite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon_favortite@2x.png"; sourceTree = "<group>"; };
+		6604C02919F770AD002B4CE2 /* user_icon_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon_history@2x.png"; sourceTree = "<group>"; };
+		6604C02A19F770AD002B4CE2 /* user_icon_lashouquan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon_lashouquan@2x.png"; sourceTree = "<group>"; };
 		664560FD19D2736A00392229 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		6697CC5A19D78DF600004B56 /* SeeAllTuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAllTuanTableViewCell.h; sourceTree = "<group>"; };
 		6697CC5B19D78DF600004B56 /* SeeAllTuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAllTuanTableViewCell.m; sourceTree = "<group>"; };
@@ -648,6 +654,9 @@
 		66DAA61619D1070F00D02D89 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				6604C02819F770AD002B4CE2 /* user_icon_favortite@2x.png */,
+				6604C02919F770AD002B4CE2 /* user_icon_history@2x.png */,
+				6604C02A19F770AD002B4CE2 /* user_icon_lashouquan@2x.png */,
 				66EDD60B19F5E4EF00E7196D /* bg_account_head_new@2x.png */,
 				8BCACD2619D704B500CD40B0 /* icon_6@2x.png */,
 				8BCACCFE19D7041E00CD40B0 /* icon_8@2x.png */,
@@ -865,6 +874,7 @@
 				8BCACD2019D7041E00CD40B0 /* icon_5@2x.png in Resources */,
 				66DAA61F19D1094C00D02D89 /* icon_tuangou_selected@2x.png in Resources */,
 				8BCACD1519D7041E00CD40B0 /* icon_4@2x.png in Resources */,
+				6604C02C19F770AD002B4CE2 /* user_icon_history@2x.png in Resources */,
 				66C4EECE19D398C5001B5CDE /* grayArrow.png in Resources */,
 				66C4EED019D398C5001B5CDE /* whiteArrow.png in Resources */,
 				664560FE19D2736A00392229 /* 2.png in Resources */,
@@ -873,6 +883,7 @@
 				66DAA62819D10AA300D02D89 /* icon_my@2x.png in Resources */,
 				8BCACD1219D7041E00CD40B0 /* icon_8@2x.png in Resources */,
 				8BCACD1319D7041E00CD40B0 /* icon_16@2x.png in Resources */,
+				6604C02B19F770AD002B4CE2 /* user_icon_favortite@2x.png in Resources */,
 				8BCACD1819D7041E00CD40B0 /* icon_11@2x.png in Resources */,
 				8BCACD2319D7041E00CD40B0 /* icon_15@2x.png in Resources */,
 				66A7757419D124860039800B /* ump_icon_back_foucs.png in Resources */,
@@ -889,6 +900,7 @@
 				66C4EECF19D398C5001B5CDE /* grayArrow@2x.png in Resources */,
 				8BCACD2219D7041E00CD40B0 /* icon_7@2x.png in Resources */,
 				8BCACD1D19D7041E00CD40B0 /* icon_108@2x.png in Resources */,
+				6604C02D19F770AD002B4CE2 /* user_icon_lashouquan@2x.png in Resources */,
 				66C4EECA19D398C5001B5CDE /* blackArrow.png in Resources */,
 				66DAA62019D1094C00D02D89 /* icon_tuangou@2x.png in Resources */,
 				8BCACD2719D704B500CD40B0 /* icon_6@2x.png in Resources */,
