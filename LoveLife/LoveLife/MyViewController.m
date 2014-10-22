@@ -48,7 +48,7 @@
 //初始化tableView
 -(void)initTableview
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 106) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStyleGrouped];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
     
@@ -66,36 +66,77 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_dataSource objectAtIndex:section] count];
+    if (section == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return [[_dataSource objectAtIndex:section - 1] count];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [_dataSource count];
+    return [_dataSource count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"cellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    
     NSInteger section = indexPath.section;
     NSInteger rowNo   = indexPath.row;
-    cell.textLabel.text = [[_dataSource objectAtIndex:section] objectAtIndex:rowNo];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;
+    
+    if (section == 0)
+    {
+        static NSString *cellId = @"headCell";
+        AccountHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil)
+        {
+            cell = [[AccountHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        return cell;
+    }
+    else
+    {
+        static NSString *cellId = @"cellId";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        
+        
+        cell.textLabel.text = [[_dataSource objectAtIndex:section - 1] objectAtIndex:rowNo];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    }
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        return 200;
+    }
+    else
+    {
+        return 44;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 20;
+    if (section == 0)
+    {
+        return 0.1;
+    }
+    else
+    {
+        return 20;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

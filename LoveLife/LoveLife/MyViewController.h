@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "AccountHeaderTableViewCell.h"
 
 @interface MyViewController : BaseViewController <UITableViewDelegate,UITableViewDataSource>
 
