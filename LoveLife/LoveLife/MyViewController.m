@@ -51,12 +51,9 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStyleGrouped];
     _tableView.delegate   = self;
     _tableView.dataSource = self;
-    
-    if (IS_IOS_7)
-    {
-        //分割线的位置不带偏移
-        _tableView.separatorInset = UIEdgeInsetsZero;
-    }
+    _tableView.separatorInset = UIEdgeInsetsZero;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [self.view addSubview:_tableView];
 }
 

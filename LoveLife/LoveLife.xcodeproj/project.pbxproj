@@ -64,6 +64,7 @@
 		66C4EF3C19D3A654001B5CDE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EF2B19D3A654001B5CDE /* UIImageView+WebCache.m */; };
 		66C4EF3D19D3A654001B5CDE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EF2D19D3A654001B5CDE /* UIView+WebCacheOperation.m */; };
 		66C4EF4119D3A735001B5CDE /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C4EF4019D3A735001B5CDE /* SDWebImage.framework */; };
+		66C72CE819F76F250058B102 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C72CE719F76F250058B102 /* MyTableViewCell.m */; };
 		66D2322519ECA6F0008F9697 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66D2322419ECA6F0008F9697 /* city.plist */; };
 		66DAA5DA19D0FBF000D02D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5D919D0FBF000D02D89 /* Foundation.framework */; };
 		66DAA5DC19D0FBF000D02D89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAA5DB19D0FBF000D02D89 /* CoreGraphics.framework */; };
@@ -246,6 +247,8 @@
 		66C4EF4019D3A735001B5CDE /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		66C4EF4319D3E634001B5CDE /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		66C4EF4419D3E643001B5CDE /* RequestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestApi.h; sourceTree = "<group>"; };
+		66C72CE619F76F250058B102 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		66C72CE719F76F250058B102 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		66D2322419ECA6F0008F9697 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		66DAA5D619D0FBF000D02D89 /* LoveLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66DAA5D919D0FBF000D02D89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -770,6 +773,8 @@
 				8B33041619DE281700053866 /* HeaderTableViewCell.m */,
 				66EDD60D19F5E59300E7196D /* AccountHeaderTableViewCell.h */,
 				66EDD60E19F5E59300E7196D /* AccountHeaderTableViewCell.m */,
+				66C72CE619F76F250058B102 /* MyTableViewCell.h */,
+				66C72CE719F76F250058B102 /* MyTableViewCell.m */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -945,6 +950,7 @@
 				66C4EEC919D398C5001B5CDE /* EGORefreshTableHeaderView.m in Sources */,
 				66C4EF3019D3A654001B5CDE /* SDImageCache.m in Sources */,
 				66EDD60F19F5E59300E7196D /* AccountHeaderTableViewCell.m in Sources */,
+				66C72CE819F76F250058B102 /* MyTableViewCell.m in Sources */,
 				8B33041719DE281700053866 /* HeaderTableViewCell.m in Sources */,
 				66BB0AF419D5493D001FA455 /* ProgressHUD.m in Sources */,
 				66C4EEB219D398A7001B5CDE /* ASIAuthenticationDialog.m in Sources */,
