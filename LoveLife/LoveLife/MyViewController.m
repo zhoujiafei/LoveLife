@@ -10,12 +10,15 @@
 
 @interface MyViewController ()
 
+@property (nonatomic,strong) NSMutableArray *cellIconArr;
+
 @end
 
 @implementation MyViewController
 
 @synthesize tableView  = _tableView;
 @synthesize dataSource = _dataSource;
+@synthesize cellIconArr = _cellIconArr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +46,10 @@
     _dataSource = [NSMutableArray arrayWithObjects:@[@"今日推荐"],
                                                    @[@"待付款订单",@"已付款订单",@"抽奖单"],
                                                    @[@"抵用券"],nil];
+    _cellIconArr = [NSMutableArray arrayWithObjects:@[@"user_listicon_tuijian"],
+                                                    @[@"user_listicon_daifukuan",@"user_listicon_yifukuan",@"user_listicon_choujiang"],
+                                                    @[@"user_listicon_diyongquan"],nil];
+    
 }
 
 //初始化tableView
@@ -96,15 +103,13 @@
     else
     {
         static NSString *cellId = @"cellId";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         if (cell == nil)
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
-        
-        
-        cell.textLabel.text = [[_dataSource objectAtIndex:section - 1] objectAtIndex:rowNo];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.cellTitle.text = [[_dataSource objectAtIndex:section - 1] objectAtIndex:rowNo];
+        cell.imageView.image = [UIImage imageNamed:[[_cellIconArr objectAtIndex:section - 1] objectAtIndex:rowNo]];
         return cell;
     }
 }

@@ -10,4 +10,7 @@
 
 @interface MyTableViewCell : UITableViewCell
 
+@property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UILabel *cellTitle;
+
 @end
