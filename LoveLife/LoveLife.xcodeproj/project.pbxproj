@@ -21,6 +21,8 @@
 		66A7757419D124860039800B /* ump_icon_back_foucs.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757319D124860039800B /* ump_icon_back_foucs.png */; };
 		66A7757619D1258F0039800B /* deatil_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */; };
 		66A90FAC19D252C200529B2D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A90FAB19D252C200529B2D /* 1.png */; };
+		66B0281119F8BF18007DA753 /* userInfo_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B0281319F8BF19007DA753 /* userInfo_arrow@2x.png */; };
+		66B0281719F8C099007DA753 /* UserCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B0281619F8C099007DA753 /* UserCenterButton.m */; };
 		66BB0AF319D5493D001FA455 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66BB0AF019D5493D001FA455 /* ProgressHUD.bundle */; };
 		66BB0AF419D5493D001FA455 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BB0AF219D5493D001FA455 /* ProgressHUD.m */; };
 		66C4EE9319D39829001B5CDE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EE8419D39829001B5CDE /* DataBase.m */; };
@@ -171,6 +173,9 @@
 		66A7757319D124860039800B /* ump_icon_back_foucs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ump_icon_back_foucs.png; sourceTree = "<group>"; };
 		66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deatil_left_arrow@2x.png"; sourceTree = "<group>"; };
 		66A90FAB19D252C200529B2D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		66B0281219F8BF19007DA753 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/userInfo_arrow@2x.png"; sourceTree = "<group>"; };
+		66B0281519F8C099007DA753 /* UserCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterButton.h; sourceTree = "<group>"; };
+		66B0281619F8C099007DA753 /* UserCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterButton.m; sourceTree = "<group>"; };
 		66BB0AF019D5493D001FA455 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		66BB0AF119D5493D001FA455 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		66BB0AF219D5493D001FA455 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -369,6 +374,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66B0281419F8C070007DA753 /* button */ = {
+			isa = PBXGroup;
+			children = (
+				66B0281519F8C099007DA753 /* UserCenterButton.h */,
+				66B0281619F8C099007DA753 /* UserCenterButton.m */,
+			);
+			name = button;
+			sourceTree = "<group>";
+		};
 		66BB0AEF19D5493D001FA455 /* ProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +678,7 @@
 		66DAA61619D1070F00D02D89 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				66B0281319F8BF19007DA753 /* userInfo_arrow@2x.png */,
 				669A6FEA19F887ED0038F673 /* user_listicon_choujiang@2x.png */,
 				669A6FEB19F887ED0038F673 /* user_listicon_daifukuan@2x.png */,
 				669A6FEC19F887ED0038F673 /* user_listicon_diyongquan@2x.png */,
@@ -778,6 +793,7 @@
 		8BE0301A19D4507D0060E7E6 /* component */ = {
 			isa = PBXGroup;
 			children = (
+				66B0281419F8C070007DA753 /* button */,
 				8BD8915419D5B226006F19FA /* view */,
 				8BE0301B19D450E80060E7E6 /* cell */,
 			);
@@ -887,6 +903,7 @@
 				8BCACD1419D7041E00CD40B0 /* icon_2@2x.png in Resources */,
 				66D2322519ECA6F0008F9697 /* city.plist in Resources */,
 				8BCACD2019D7041E00CD40B0 /* icon_5@2x.png in Resources */,
+				66B0281119F8BF18007DA753 /* userInfo_arrow@2x.png in Resources */,
 				66DAA61F19D1094C00D02D89 /* icon_tuangou_selected@2x.png in Resources */,
 				8BCACD1519D7041E00CD40B0 /* icon_4@2x.png in Resources */,
 				6604C02C19F770AD002B4CE2 /* user_icon_history@2x.png in Resources */,
@@ -968,6 +985,7 @@
 				66C4EF3619D3A654001B5CDE /* SDWebImagePrefetcher.m in Sources */,
 				66DAA63A19D10E1C00D02D89 /* MyViewController.m in Sources */,
 				66C4EE9819D39829001B5CDE /* FMDatabasePool.m in Sources */,
+				66B0281719F8C099007DA753 /* UserCenterButton.m in Sources */,
 				66C4EEB619D398A7001B5CDE /* ASIFormDataRequest.m in Sources */,
 				66C4EF3919D3A654001B5CDE /* UIImage+MultiFormat.m in Sources */,
 				66C4EEB419D398A7001B5CDE /* ASIDataDecompressor.m in Sources */,
@@ -1035,6 +1053,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		66B0281319F8BF19007DA753 /* userInfo_arrow@2x.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66B0281219F8BF19007DA753 /* en */,
+			);
+			name = "userInfo_arrow@2x.png";
+			sourceTree = "<group>";
+		};
 		66DAA5E219D0FBF000D02D89 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
