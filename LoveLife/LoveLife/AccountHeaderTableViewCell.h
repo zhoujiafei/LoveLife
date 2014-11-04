@@ -10,4 +10,8 @@
 
 @interface AccountHeaderTableViewCell : UITableViewCell
 
+@property (nonatomic,strong) UIButton *couponBtn;//优惠按钮
+@property (nonatomic,strong) UIButton *collectBtn;//收藏按钮
+@property (nonatomic,strong) UIButton *historyBtn;//最近浏览按钮
+
 @end

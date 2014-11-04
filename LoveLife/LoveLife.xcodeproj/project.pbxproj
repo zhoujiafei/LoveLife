@@ -22,7 +22,6 @@
 		66A7757619D1258F0039800B /* deatil_left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */; };
 		66A90FAC19D252C200529B2D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A90FAB19D252C200529B2D /* 1.png */; };
 		66B0281119F8BF18007DA753 /* userInfo_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B0281319F8BF19007DA753 /* userInfo_arrow@2x.png */; };
-		66B0281719F8C099007DA753 /* UserCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B0281619F8C099007DA753 /* UserCenterButton.m */; };
 		66BB0AF319D5493D001FA455 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66BB0AF019D5493D001FA455 /* ProgressHUD.bundle */; };
 		66BB0AF419D5493D001FA455 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BB0AF219D5493D001FA455 /* ProgressHUD.m */; };
 		66C4EE9319D39829001B5CDE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4EE8419D39829001B5CDE /* DataBase.m */; };
@@ -174,8 +173,6 @@
 		66A7757519D1258F0039800B /* deatil_left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deatil_left_arrow@2x.png"; sourceTree = "<group>"; };
 		66A90FAB19D252C200529B2D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		66B0281219F8BF19007DA753 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/userInfo_arrow@2x.png"; sourceTree = "<group>"; };
-		66B0281519F8C099007DA753 /* UserCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterButton.h; sourceTree = "<group>"; };
-		66B0281619F8C099007DA753 /* UserCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterButton.m; sourceTree = "<group>"; };
 		66BB0AF019D5493D001FA455 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		66BB0AF119D5493D001FA455 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		66BB0AF219D5493D001FA455 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -374,15 +371,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66B0281419F8C070007DA753 /* button */ = {
-			isa = PBXGroup;
-			children = (
-				66B0281519F8C099007DA753 /* UserCenterButton.h */,
-				66B0281619F8C099007DA753 /* UserCenterButton.m */,
-			);
-			name = button;
-			sourceTree = "<group>";
-		};
 		66BB0AEF19D5493D001FA455 /* ProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,7 +781,6 @@
 		8BE0301A19D4507D0060E7E6 /* component */ = {
 			isa = PBXGroup;
 			children = (
-				66B0281419F8C070007DA753 /* button */,
 				8BD8915419D5B226006F19FA /* view */,
 				8BE0301B19D450E80060E7E6 /* cell */,
 			);
@@ -985,7 +972,6 @@
 				66C4EF3619D3A654001B5CDE /* SDWebImagePrefetcher.m in Sources */,
 				66DAA63A19D10E1C00D02D89 /* MyViewController.m in Sources */,
 				66C4EE9819D39829001B5CDE /* FMDatabasePool.m in Sources */,
-				66B0281719F8C099007DA753 /* UserCenterButton.m in Sources */,
 				66C4EEB619D398A7001B5CDE /* ASIFormDataRequest.m in Sources */,
 				66C4EF3919D3A654001B5CDE /* UIImage+MultiFormat.m in Sources */,
 				66C4EEB419D398A7001B5CDE /* ASIDataDecompressor.m in Sources */,
