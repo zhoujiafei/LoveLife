@@ -98,6 +98,7 @@
         {
             cell = [[AccountHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
+        cell.delegate = self;
         return cell;
     }
     else
@@ -145,6 +146,24 @@
 {
     return 0.1;
 }
+
+#pragma mark
+#pragma mark AccountHeaderCellDelegate
+-(void)clickCouponButton
+{
+    NSLog(@"clickCouponButton");
+}
+
+-(void)clickCollectButton
+{
+    NSLog(@"clickCollectButton");
+}
+
+-(void)clickHistoryButton
+{
+    NSLog(@"clickHistoryButton");
+}
+
 
 #pragma mark
 #pragma mark Other Methods

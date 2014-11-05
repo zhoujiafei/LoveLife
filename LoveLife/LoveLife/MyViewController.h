@@ -10,7 +10,7 @@
 #import "AccountHeaderTableViewCell.h"
 #import "MyTableViewCell.h"
 
-@interface MyViewController : BaseViewController <UITableViewDelegate,UITableViewDataSource>
+@interface MyViewController : BaseViewController <UITableViewDelegate,UITableViewDataSource,AccountHeaderCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
